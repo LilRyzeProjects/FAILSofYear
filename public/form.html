@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DRD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title></title>
+</head>
+<body>
+<form action="/comments" method="POST">
+    @csrf
+    Name:
+    <input type="text" name="name"/><br/>
+    <input type='hidden' name='csrf-token' value='{{ csrf_token() }}'/>
+    Comment:<br/>
+    <textarea name="text"></textarea>
+    <!--<input type="hidden" name="_method" vale="PUT">-->
+    <br/>
+    <input type="submit" value="Add"/>
+</form>
+</body>
+</html>
